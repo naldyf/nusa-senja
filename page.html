@@ -15,18 +15,20 @@
 <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Travel poster for Nusa Senja, an island that does not exist">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2b1055"/>
-      <stop offset="0.34" stop-color="#7b2d8b"/>
-      <stop offset="0.58" stop-color="#e0533d"/>
-      <stop offset="0.78" stop-color="#ff8a3d"/>
+      <stop offset="0" stop-color="#1d0b3d"/>
+      <stop offset="0.28" stop-color="#5b1a6e"/>
+      <stop offset="0.5" stop-color="#a83a5e"/>
+      <stop offset="0.68" stop-color="#e0533d"/>
+      <stop offset="0.84" stop-color="#ff8a3d"/>
       <stop offset="1" stop-color="#ffc46b"/>
     </linearGradient>
     <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#f7a94a"/>
-      <stop offset="0.18" stop-color="#e07840"/>
-      <stop offset="0.42" stop-color="#0f766e"/>
-      <stop offset="0.75" stop-color="#0b4f5c"/>
-      <stop offset="1" stop-color="#07303f"/>
+      <stop offset="0.14" stop-color="#e07840"/>
+      <stop offset="0.34" stop-color="#15908a"/>
+      <stop offset="0.6" stop-color="#0b5f6e"/>
+      <stop offset="0.85" stop-color="#0b4f5c"/>
+      <stop offset="1" stop-color="#062a38"/>
     </linearGradient>
     <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
       <stop offset="0" stop-color="#fff3c4" stop-opacity="0.95"/>
@@ -34,35 +36,52 @@
       <stop offset="1" stop-color="#ff8a3d" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#f6e3b8"/>
+      <stop offset="0" stop-color="#f9e8c0"/>
       <stop offset="1" stop-color="#d9b380"/>
     </linearGradient>
     <linearGradient id="gateFace" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#4a2350"/>
       <stop offset="1" stop-color="#1c0f28"/>
     </linearGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="soft2"><feGaussianBlur stdDeviation="12"/></filter>
   </defs>
 
   <!-- sky -->
   <rect x="0" y="0" width="1024" height="640" fill="url(#sky)"/>
+  <!-- clouds: soft warm streaks -->
+  <g fill="#ffd9a0" opacity="0.35" filter="url(#soft2)">
+    <ellipse cx="180" cy="120" rx="180" ry="26"/>
+    <ellipse cx="820" cy="90" rx="200" ry="24"/>
+    <ellipse cx="700" cy="210" rx="150" ry="20"/>
+    <ellipse cx="260" cy="250" rx="140" ry="18"/>
+  </g>
+  <g fill="#ff9a5c" opacity="0.3" filter="url(#soft)">
+    <ellipse cx="420" cy="180" rx="160" ry="18"/>
+    <ellipse cx="880" cy="300" rx="130" ry="16"/>
+  </g>
   <!-- sun + glow -->
-  <circle cx="512" cy="548" r="230" fill="url(#sunGlow)"/>
+  <circle cx="512" cy="548" r="260" fill="url(#sunGlow)"/>
   <circle cx="512" cy="548" r="92" fill="#fff1b8"/>
   <circle cx="512" cy="548" r="92" fill="none" stroke="#ffb347" stroke-width="3" opacity="0.7"/>
-  <!-- distant headland -->
-  <path d="M0 600 L120 566 L260 592 L420 570 L560 596 L720 574 L880 596 L1024 578 L1024 640 L0 640 Z" fill="#5b2340" opacity="0.85"/>
+  <!-- distant volcanic island + headland -->
+  <path d="M0 600 L90 574 L180 592 L300 560 L380 586 L520 566 L640 590 L760 572 L880 596 L1024 578 L1024 640 L0 640 Z" fill="#4a1a3a" opacity="0.9"/>
+  <path d="M640 596 L700 520 L730 540 L760 596 Z" fill="#3a1228" opacity="0.95"/>
+  <path d="M700 520 L712 505 L724 520 Z" fill="#ff8a3d" opacity="0.8"/>
   <!-- sea -->
   <rect x="0" y="620" width="1024" height="404" fill="url(#sea)"/>
   <!-- sun reflection column -->
-  <g fill="#ffd66b" opacity="0.85">
+  <g fill="#ffd66b" opacity="0.9">
     <rect x="470" y="628" width="84" height="10" rx="5"/>
     <rect x="452" y="648" width="120" height="9" rx="4.5"/>
     <rect x="466" y="668" width="92" height="9" rx="4.5"/>
     <rect x="446" y="690" width="132" height="8" rx="4"/>
     <rect x="470" y="712" width="84" height="8" rx="4"/>
+    <rect x="480" y="734" width="64" height="7" rx="3.5"/>
   </g>
   <!-- wave lines -->
-  <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.28">
+  <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.3">
     <path d="M80 700 Q160 690 240 700 T400 700"/>
     <path d="M640 690 Q720 680 800 690 T960 690"/>
     <path d="M120 770 Q220 760 320 770 T520 770"/>
@@ -70,25 +89,27 @@
     <path d="M60 850 Q150 840 240 850 T420 850"/>
     <path d="M700 860 Q790 850 880 860 T1000 860"/>
   </g>
+  <g stroke="#ffd66b" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.35">
+    <path d="M300 730 Q380 722 460 730"/>
+    <path d="M560 740 Q640 732 720 740"/>
+  </g>
 
-  <!-- rocky islet -->
+  <!-- rocky islet with reef -->
   <path d="M380 700 L644 700 L676 744 L348 744 Z" fill="#1c0f24"/>
+  <path d="M340 744 L684 744 L700 758 L324 758 Z" fill="#140a1e" opacity="0.9"/>
   <!-- candi bentar: split temple gate, shorter so the sun crowns it -->
   <g fill="url(#gateFace)" stroke="#ffb347" stroke-width="2.5" stroke-opacity="0.8">
-    <!-- left tower: stepped, top at y=500 -->
     <path d="M410 700 L410 580 L430 580 L430 548 L446 548 L446 520 L462 520 L462 500 L478 500 L478 520 L490 520 L490 700 Z"/>
-    <!-- right tower -->
     <path d="M534 700 L534 520 L546 520 L546 500 L562 500 L562 520 L578 520 L578 548 L594 548 L594 580 L614 580 L614 700 Z"/>
-    <!-- crowns -->
     <path d="M462 500 L472 478 L482 500 Z"/>
     <path d="M542 500 L552 478 L562 500 Z"/>
   </g>
-  <!-- tier highlight lines so the steps read -->
+  <!-- tier highlight lines -->
   <g stroke="#ffb347" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85">
     <path d="M410 580 L430 580 M430 548 L446 548 M446 520 L462 520"/>
     <path d="M594 580 L614 580 M578 548 L594 548 M562 520 L578 520"/>
   </g>
-  <!-- warm rim light on the gate's inner edges (the split) -->
+  <!-- warm rim light on the gate's inner edges -->
   <g stroke="#ffd66b" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.95">
     <path d="M490 700 L490 520"/>
     <path d="M534 700 L534 520"/>
@@ -105,6 +126,11 @@
     <path d="M132 820 L282 820" stroke="#7c4a12" stroke-width="3"/>
     <path d="M132 820 L140 806 M282 820 L274 806" stroke="#7c4a12" stroke-width="3"/>
   </g>
+  <!-- second small boat, far -->
+  <g opacity="0.85">
+    <path d="M790 720 L790 660 L842 720 Z" fill="#ffe9b8"/>
+    <path d="M778 720 Q810 732 844 720 L836 728 Q810 738 786 728 Z" fill="#2a1208"/>
+  </g>
 
   <!-- palm fronds: thin elegant arcs from the top corners -->
   <g stroke="#160a1c" stroke-width="10" stroke-linecap="round" fill="none">
@@ -120,6 +146,17 @@
     <path d="M300 180 Q312 170 324 180 Q336 170 348 180"/>
     <path d="M660 150 Q672 140 684 150 Q696 140 708 150"/>
     <path d="M720 210 Q730 202 740 210 Q750 202 760 210"/>
+    <path d="M180 300 Q190 292 200 300 Q210 292 220 300"/>
+  </g>
+
+  <!-- foreground rocks + frangipani on the sand -->
+  <g fill="#2a1a2e">
+    <path d="M60 960 L110 930 L160 962 Z"/>
+    <path d="M880 962 L930 928 L980 962 Z"/>
+  </g>
+  <g fill="#fff1b8">
+    <circle cx="120" cy="948" r="7"/><circle cx="135" cy="940" r="6"/><circle cx="105" cy="940" r="6"/>
+    <circle cx="910" cy="946" r="7"/><circle cx="925" cy="938" r="6"/><circle cx="895" cy="938" r="6"/>
   </g>
 
   <!-- sand crescent -->
@@ -129,6 +166,10 @@
   <!-- place name -->
   <text x="512" y="940" text-anchor="middle" class="name">NUSA SENJA</text>
   <rect x="392" y="962" width="240" height="4" fill="#fff7e8" opacity="0.9"/>
+
+  <!-- film grain + vignette for a printed-poster feel -->
+  <rect x="0" y="0" width="1024" height="1024" filter="url(#grain)" opacity="0.03"/>
+  <rect x="0" y="0" width="1024" height="1024" fill="none" stroke="#1a0e06" stroke-width="28" opacity="0.18"/>
 </svg>
 </body>
 </html>
