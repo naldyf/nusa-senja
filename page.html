@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NUSA SENJA — travel poster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;width:1024px;height:1024px;background:#0b1e2d;overflow:hidden}
+  svg{display:block;width:1024px;height:1024px}
+  .name{font-family:'Archivo Black','Arial Black',Arial,sans-serif;font-size:116px;letter-spacing:6px;fill:#fff7e8;stroke:#1a0e06;stroke-width:2.5px;paint-order:stroke}
+</style>
+</head>
+<body>
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Travel poster for Nusa Senja, an island that does not exist">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b1055"/>
+      <stop offset="0.34" stop-color="#7b2d8b"/>
+      <stop offset="0.58" stop-color="#e0533d"/>
+      <stop offset="0.78" stop-color="#ff8a3d"/>
+      <stop offset="1" stop-color="#ffc46b"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7a94a"/>
+      <stop offset="0.18" stop-color="#e07840"/>
+      <stop offset="0.42" stop-color="#0f766e"/>
+      <stop offset="0.75" stop-color="#0b4f5c"/>
+      <stop offset="1" stop-color="#07303f"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff3c4" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#ffd66b" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ff8a3d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6e3b8"/>
+      <stop offset="1" stop-color="#d9b380"/>
+    </linearGradient>
+    <linearGradient id="gateFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a2350"/>
+      <stop offset="1" stop-color="#1c0f28"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect x="0" y="0" width="1024" height="640" fill="url(#sky)"/>
+  <!-- sun + glow -->
+  <circle cx="512" cy="548" r="230" fill="url(#sunGlow)"/>
+  <circle cx="512" cy="548" r="92" fill="#fff1b8"/>
+  <circle cx="512" cy="548" r="92" fill="none" stroke="#ffb347" stroke-width="3" opacity="0.7"/>
+  <!-- distant headland -->
+  <path d="M0 600 L120 566 L260 592 L420 570 L560 596 L720 574 L880 596 L1024 578 L1024 640 L0 640 Z" fill="#5b2340" opacity="0.85"/>
+  <!-- sea -->
+  <rect x="0" y="620" width="1024" height="404" fill="url(#sea)"/>
+  <!-- sun reflection column -->
+  <g fill="#ffd66b" opacity="0.85">
+    <rect x="470" y="628" width="84" height="10" rx="5"/>
+    <rect x="452" y="648" width="120" height="9" rx="4.5"/>
+    <rect x="466" y="668" width="92" height="9" rx="4.5"/>
+    <rect x="446" y="690" width="132" height="8" rx="4"/>
+    <rect x="470" y="712" width="84" height="8" rx="4"/>
+  </g>
+  <!-- wave lines -->
+  <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.28">
+    <path d="M80 700 Q160 690 240 700 T400 700"/>
+    <path d="M640 690 Q720 680 800 690 T960 690"/>
+    <path d="M120 770 Q220 760 320 770 T520 770"/>
+    <path d="M620 780 Q700 770 780 780 T940 780"/>
+    <path d="M60 850 Q150 840 240 850 T420 850"/>
+    <path d="M700 860 Q790 850 880 860 T1000 860"/>
+  </g>
+
+  <!-- rocky islet -->
+  <path d="M380 700 L644 700 L676 744 L348 744 Z" fill="#1c0f24"/>
+  <!-- candi bentar: split temple gate, shorter so the sun crowns it -->
+  <g fill="url(#gateFace)" stroke="#ffb347" stroke-width="2.5" stroke-opacity="0.8">
+    <!-- left tower: stepped, top at y=500 -->
+    <path d="M410 700 L410 580 L430 580 L430 548 L446 548 L446 520 L462 520 L462 500 L478 500 L478 520 L490 520 L490 700 Z"/>
+    <!-- right tower -->
+    <path d="M534 700 L534 520 L546 520 L546 500 L562 500 L562 520 L578 520 L578 548 L594 548 L594 580 L614 580 L614 700 Z"/>
+    <!-- crowns -->
+    <path d="M462 500 L472 478 L482 500 Z"/>
+    <path d="M542 500 L552 478 L562 500 Z"/>
+  </g>
+  <!-- tier highlight lines so the steps read -->
+  <g stroke="#ffb347" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85">
+    <path d="M410 580 L430 580 M430 548 L446 548 M446 520 L462 520"/>
+    <path d="M594 580 L614 580 M578 548 L594 548 M562 520 L578 520"/>
+  </g>
+  <!-- warm rim light on the gate's inner edges (the split) -->
+  <g stroke="#ffd66b" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.95">
+    <path d="M490 700 L490 520"/>
+    <path d="M534 700 L534 520"/>
+  </g>
+  <!-- sun peeking through the split -->
+  <rect x="490" y="560" width="44" height="140" fill="#fff1b8" opacity="0.9"/>
+
+  <!-- jukung (outrigger canoe) with triangular sail -->
+  <g>
+    <path d="M168 812 L168 700 L248 812 Z" fill="#fff1b8" opacity="0.95"/>
+    <path d="M168 812 L168 700" stroke="#7c4a12" stroke-width="4"/>
+    <path d="M150 812 Q205 830 262 812 L252 824 Q205 838 160 824 Z" fill="#2a1208"/>
+    <path d="M150 812 L262 812" stroke="#2a1208" stroke-width="3"/>
+    <path d="M132 820 L282 820" stroke="#7c4a12" stroke-width="3"/>
+    <path d="M132 820 L140 806 M282 820 L274 806" stroke="#7c4a12" stroke-width="3"/>
+  </g>
+
+  <!-- palm fronds: thin elegant arcs from the top corners -->
+  <g stroke="#160a1c" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M6 30 Q70 60 108 130"/>
+    <path d="M6 90 Q60 110 84 180"/>
+    <path d="M6 150 Q50 165 62 230"/>
+    <path d="M1018 30 Q954 60 916 130"/>
+    <path d="M1018 90 Q964 110 940 180"/>
+    <path d="M1018 150 Q974 165 962 230"/>
+  </g>
+  <!-- birds -->
+  <g stroke="#2a1208" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8">
+    <path d="M300 180 Q312 170 324 180 Q336 170 348 180"/>
+    <path d="M660 150 Q672 140 684 150 Q696 140 708 150"/>
+    <path d="M720 210 Q730 202 740 210 Q750 202 760 210"/>
+  </g>
+
+  <!-- sand crescent -->
+  <path d="M0 1024 L0 962 Q256 922 512 962 Q768 922 1024 962 L1024 1024 Z" fill="url(#sand)"/>
+  <path d="M0 962 Q256 922 512 962 Q768 922 1024 962" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.5"/>
+
+  <!-- place name -->
+  <text x="512" y="940" text-anchor="middle" class="name">NUSA SENJA</text>
+  <rect x="392" y="962" width="240" height="4" fill="#fff7e8" opacity="0.9"/>
+</svg>
+</body>
+</html>
